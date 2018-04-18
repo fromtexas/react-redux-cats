@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = () => (
     <div>
-        about page
+        <p>Random pictures of cats</p>
     </div>
 );
 

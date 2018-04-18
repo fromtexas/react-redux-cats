@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Switch, NavLink, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
+import CatImg from './CatImg';
 import {connect} from 'react-redux';
 import {get} from '../actions/catsAction';
 
@@ -26,6 +27,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={(props) => <HomePage cats = {this.props.cats} {...props}/>}  />
           <Route path="/about" component={AboutPage} />
+          <Route path="/:id" component={CatImg} />
         </Switch>
       </div>
     );
