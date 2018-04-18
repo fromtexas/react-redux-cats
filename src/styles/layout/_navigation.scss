@@ -1,0 +1,15 @@
+.navigation{
+    padding: 3rem;
+
+    a,
+    a:visited,
+    a:link{
+        text-decoration: none;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: rgb(231, 86, 19);
+        padding: 1rem;
+        transition: all .4s;
+        letter-spacing: .3rem;
+    }
+}

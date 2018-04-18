@@ -1,0 +1,28 @@
+.cat{
+
+    &__gallery{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        grid-auto-rows: 15rem;
+        grid-auto-flow: row dense;
+        grid-gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    &__item{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        grid-column-start: auto;
+        grid-row-start: auto;
+    }
+
+    &--medium {
+        grid-row-end: span 2;
+    }
+    
+    &--large {
+        grid-row-end: span 3;
+    }
+}
