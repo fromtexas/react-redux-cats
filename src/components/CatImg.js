@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getCat} from '../utils/getCats';
+import {filterCats} from '../utils/getCats';
 import {connect} from 'react-redux';
 
 class CatImg extends Component {
@@ -8,7 +8,7 @@ class CatImg extends Component {
     }
 
     render () {
-        const currentCat = getCat(this.props.cats, this.props.match.params.id);
+        const currentCat = filterCats(this.props.cats, this.props.match.params.id);
         return (
             <div>
                 <img src = {currentCat.url._text}/>

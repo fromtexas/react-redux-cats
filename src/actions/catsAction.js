@@ -1,19 +1,13 @@
 import * as types from '../constants/actionTypes';
 import {getCats} from '../utils/getCats';
-import {xml2js} from 'xml-js';
 
-const options = {
-    compact: true,
-    ignoreComment: true
-};
 
-export const get = () => dispatch => {
+export const get = (url) => dispatch => {
 
-    getCats().then(res => {
-        const payload = xml2js(res, options);
+    getCats(url).then(res => {
         dispatch({
-            type: types.GET,
-            payload: payload.response.data.images.image
+            type: types.GET_CATS,
+            payload: res.response.data.images.image
         });
     });
 

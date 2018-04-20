@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import CatsListItem from './CatsListitem';
+import {connect} from 'react-redux';
+
 
 const HomePage = ({cats}) => {
     return (
@@ -9,4 +11,9 @@ const HomePage = ({cats}) => {
     );
 }  
 
-export default HomePage;
+
+const mapStateToProps = ({cats}) => ({
+  cats
+});
+
+export default connect(mapStateToProps)(HomePage);

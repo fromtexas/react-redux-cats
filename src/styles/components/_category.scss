@@ -1,0 +1,19 @@
+.category{
+    &__list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5rem;
+    }
+
+    &__item{
+        cursor: pointer;
+        font-size: 1.8rem;
+        letter-spacing: .3rem;
+        color: #333;
+        text-transform: uppercase;
+        &:not(:last-child){
+            margin-right: 2rem;
+        }
+    }
+}
