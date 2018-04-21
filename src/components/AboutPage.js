@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AboutPage = () => (
-    <div>
+    <div className='about'>
         <p>Random pictures of cats</p>
     </div>
 );

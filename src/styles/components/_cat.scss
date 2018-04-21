@@ -25,4 +25,17 @@
     &--large {
         grid-row-end: span 3;
     }
+
+    &__img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        img{
+            display: block;
+            width: 100%;
+            max-height: 70vh;
+        }
+    }
 }
