@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import CatsListItem from './CatsListitem';
 import {connect} from 'react-redux';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 const HomePage = ({cats}) => {
     return (
-        <div className = 'cat__gallery'>
-            {cats.map((item, index) => <CatsListItem key = {index} cat = {item} />)}
-        </div>
+        <TransitionGroup className = 'cat__gallery'>
+            {cats.map((item, index) => <CSSTransition key = {index} classNames = 'fade' timeout = {500}><CatsListItem  cat = {item} /></CSSTransition>)}
+        </TransitionGroup>
     );
 }  
 

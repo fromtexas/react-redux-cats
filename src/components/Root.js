@@ -9,15 +9,14 @@ export default class Root extends Component {
 
   componentDidMount () {
     this.props.store.dispatch(get());
-    //this.props.store.dispatch(getCategories());
   }
 
   render () {
-    const { store, history } = this.props;
+    const { store, history } = this.props; 
     return (
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <App />
+      <Provider store = {store}>
+        <ConnectedRouter history = {history}>
+          <App/>
         </ConnectedRouter>
       </Provider>
     );

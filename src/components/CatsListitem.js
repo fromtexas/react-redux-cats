@@ -3,9 +3,11 @@ import {Link} from 'react-router-dom';
 
 const CatsListLitem = ({cat}) => {
 
-    const span = Math.floor(Math.random()*10) >= 5 ? '--large' : '--medium';
+    const classArr = ['--small', '--medium', '--large']
 
-    return <Link className = {`cat${span}`} to={`/${cat.id._text}`}><img className={`cat__item`} src={cat.url._text} /></Link>;
+    const span = Math.floor(Math.random()*3);
+
+    return <Link className = {`cat${classArr[span]}`} to={`/${cat.id._text}`}><img className={`cat__item`} src={cat.url._text} /></Link>;
 };
     
 

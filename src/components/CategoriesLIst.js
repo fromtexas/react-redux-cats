@@ -34,10 +34,10 @@ class CategoriesList extends Component{
 
     render () {
         const categories = CATEGORIES.map((item, index) => {
-            return <Category active={item === this.state.active? item : null} change={this.changeCategory} key = {index} category={item} />;
+            return <Category active = {item === this.state.active? item : null} change = {this.changeCategory} key = {index} category = {item} />;
         });
         return (
-            <div className='category__list'>
+            <div className = 'category__list'>
                 {categories}
             </div>
         );

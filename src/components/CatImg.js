@@ -10,7 +10,7 @@ class CatImg extends Component {
     render () {
         const currentCat = filterCats(this.props.cats, this.props.match.params.id);
         return (
-            <div className='cat__img'>
+            <div className = 'cat__img'>
                 <img src = {currentCat.url._text}/>
             </div>
         );

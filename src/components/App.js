@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { Switch, NavLink, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import {connect} from 'react-redux';
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import CatImg from './CatImg';
@@ -15,17 +17,23 @@ class App extends Component {
     return (
       <div>
         <div className = 'navigation'>
-          <a>Cats Gallery</a>
-          <NavLink  exact to="/" activeStyle={activeStyle}>Home</NavLink>
-          <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
+          <a className = 'logo'>Cats Gallery</a>
+          <div>
+          <NavLink  exact to= '/' activeStyle = {activeStyle}>Home</NavLink>
+          <NavLink to= '/about' activeStyle = {activeStyle}>About</NavLink>
+          </div>
         </div>
         <CategoriesList/>
-        <main className='container'>
-        <Switch>
-          <Route exact path="/" component={HomePage}  />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/:id" component={CatImg} />
-        </Switch>
+        <main className = 'container'>
+        <TransitionGroup>
+          <CSSTransition key = {this.props.routing.location.key} classNames = 'fade' timeout = {300}>
+            <Switch location={this.props.routing.location}>
+              <Route exact path = '/' component = {HomePage}  />
+              <Route path = '/about' component = {AboutPage} />
+              <Route path = '/:id' component = {CatImg} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
         </main>
         <Footer/>
       </div>
@@ -33,5 +41,8 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = ({routing}) => ({
+  routing
+});
 
-export default App; 
+export default connect(mapStateToProps)(App); 

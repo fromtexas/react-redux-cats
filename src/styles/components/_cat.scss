@@ -18,11 +18,15 @@
         grid-row-start: auto;
     }
 
-    &--medium {
+    &--small{
+        grid-row-end: span 1;
+    }
+
+    &--medium{
         grid-row-end: span 2;
     }
     
-    &--large {
+    &--large{
         grid-row-end: span 3;
     }
 
